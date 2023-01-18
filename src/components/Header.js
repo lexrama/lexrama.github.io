@@ -6,7 +6,7 @@ import { NavLink, Link } from "react-router-dom";
 const Header = () => {
   return (
 	<div>
-	<header className="header" style={{backgroundColor: 'red'}}>
+	<header className="header" style={{backgroundColor: 'black'}}>
 		{/* <NavLink to={link} tag={Link} className="logo">
 		<span style={{ color: theme.text }}></span>
 		<span className="logo-name" style={{ color: theme.text }}>
@@ -33,15 +33,15 @@ const Header = () => {
 		</li>
 		<li>
 			{/* <NavLink
-			className="ec"
-			to="/education"
-			tag={Link}
-			activeStyle={{ fontWeight: "bold" }}
-			style={{ borderRadius: 5, color: theme.text }}
+			// className="ec"
+			// to="/education"
+			// tag={Link}
+			// activeStyle={{ fontWeight: "bold" }}
+			// style={{ borderRadius: 5 }}
 			>
 			Education and Certifications
 			</NavLink> */}
-			Education and Certifications
+			<span className="ec">Education and Certifications</span>
 		</li>
 		<li>
 			{/* <NavLink
@@ -51,7 +51,7 @@ const Header = () => {
 			activeStyle={{ fontWeight: "bold" }}
 			style={{ borderRadius: 5, color: theme.text }}
 			> */}
-			Experience
+			<span className="xp">Experience</span>
 			{/* </NavLink> */}
 		</li>
 		<li>
@@ -62,7 +62,7 @@ const Header = () => {
 			activeStyle={{ fontWeight: "bold" }}
 			style={{ borderRadius: 5, color: theme.text }}
 			> */}
-			Projects
+			<span className="projects">Projects</span>
 			{/* </NavLink> */}
 		</li>
 		<li>
@@ -73,7 +73,7 @@ const Header = () => {
 			activeStyle={{ fontWeight: "bold" }}
 			style={{ borderRadius: 5, color: theme.text }}
 			> */}
-			Contact and Resume
+			<span className="cr">Contact and Resume</span>
 			{/* </NavLink> */}
 		</li>
 		{/* <button {...styles} onClick={changeTheme}>
