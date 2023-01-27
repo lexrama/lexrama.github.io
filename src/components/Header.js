@@ -1,5 +1,6 @@
 // import React, { useState } from "react";
 import "./Header.css";
+import Resume from "../assets/resume.pdf"
 import HeaderSocials from "./HeaderSocials";
 // import { NavLink, Link } from "react-router-dom";
 
@@ -22,7 +23,12 @@ const Header = () => {
 						<span className="projects">Projects</span>
 					</li>
 					<li>
-						<span className="cr">Resume</span>
+						<a
+							href={Resume}
+							target={"_blank"}
+							rel='noreferrer'
+							style={{ color: 'black' }}>
+							Resume</a>
 					</li>
 				</ul>
 				<HeaderSocials />
