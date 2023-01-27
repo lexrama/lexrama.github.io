@@ -10,6 +10,13 @@
 	/* margin: -10px auto; */
 }
 
+.header a {
+	text-decoration: none;
+	/* max-width: 90%; */
+	/* padding; */
+	/* margin: -10px auto; */
+}
+
 .header ul {
 	margin: 10px;
 	padding: 10px;
@@ -24,6 +31,24 @@
 	padding: 10px;
 	overflow: hidden;
 	float: left;
+}
+
+.header .header-button {
+	/* display:table-row; */
+	border: 2px solid rgb(33, 33, 224);
+	border-radius: 5px;
+	padding: 7.5px;
+	/* border-spacing: 20px; */
+}
+
+.header .header-button:hover {
+	/* display:table-row; */
+	background-color: rgb(33, 33, 224);
+	color: white;
+	/* border: 2px solid rgb(121, 74, 30); */
+	border-radius: 5px;
+	padding: 7.5px;
+	/* border-spacing: 20px; */
 }
 
 .socials {
