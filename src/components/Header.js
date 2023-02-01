@@ -8,6 +8,7 @@ import HeaderSocials from "./HeaderSocials"
 const Header = () => {
 	return (
 		<div>
+			<button className="header-button">hi</button>
 			<header className="header">
 				<ul>
 					<li>
@@ -27,8 +28,7 @@ const Header = () => {
 							className="header-button"
 							href={Resume}
 							target={"_blank"}
-							rel='noreferrer'
-							style={{ color: 'black' }}>
+							rel='noreferrer'>
 							Resume</a>
 					</li>
 				</ul>
