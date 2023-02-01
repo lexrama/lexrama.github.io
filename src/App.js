@@ -1,4 +1,5 @@
-// import Header from './components/Header';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './pages/home/Home.js';
 import About from './pages/about/About.js';
 import Projects from './pages/projects/Projects.js';
@@ -12,11 +13,12 @@ import './App.css';
 function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Home />
       <About />
       <Experiences />
       <Projects />
+      <Footer />
       {/* <Routes>
         <Route path="/about" element={<div>hi</div>} />
       </Routes> */}
