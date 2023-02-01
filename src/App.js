@@ -1,4 +1,4 @@
-import Header from './components/Header';
+// import Header from './components/Header';
 import Home from './pages/home/Home.js';
 import About from './pages/about/About.js';
 import Projects from './pages/projects/Projects.js';
