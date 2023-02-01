@@ -8,7 +8,7 @@ import HeaderSocials from "./HeaderSocials"
 const Header = () => {
 	return (
 		<div>
-			<button className="header-button">hi</button>
+			{/* <button className="header-button">hi</button> */}
 			<header className="header">
 				<ul>
 					<li>
