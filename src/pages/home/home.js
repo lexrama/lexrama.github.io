@@ -15,7 +15,6 @@ const Home = () => {
 					<Col>
 						<Image className='profile-pic' roundedCircle src={require('../../assets/gradpic.jpeg')} />
 					</Col>
-					{/* <Col><img src={require('../../assets/gradpic.jpeg')} alt='Graduation'></img></Col> */}
 					<Col>
 						<h1>Hi, I'm Alexa.</h1>
 						<p>I'm a recent graduate from Stanford University asdjfksdfaghjlklhjsdkfgjlhksdfg sdlkfjgh lsdjfhgklsjdfhg lksdjfhg </p>
