@@ -17,7 +17,7 @@ const Home = () => {
 					</Col>
 					<Col>
 						<h1>Hi, I'm Alexa.</h1>
-						<p>I'm a recent graduate from Stanford University asdjfksdfaghjlklhjsdkfgjlhksdfg sdlkfjgh lsdjfhgklsjdfhg lksdjfhg </p>
+						<p>I'm a recent graduate from Stanford University. More to come soon.</p>
 					</Col>
 				</Row>
 			</Container>

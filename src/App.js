@@ -17,12 +17,10 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          {/* <Route path="/" element={<Header />}> */}
             <Route path="/" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="experience" element={<Experience />} />
             <Route path="projects" element={<Projects />} />
-          {/* </Route> */}
         </Routes>
       </BrowserRouter>
 
