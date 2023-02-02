@@ -5,7 +5,7 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai"
 
 function Footer() {
 	return (
-		<Navbar fixed='bottom' bg="light" expand="lg">
+		<Navbar bg="light" expand="lg">
 			<Container>
 				{/* <Navbar.Brand href="#home">Alexa Ramachandran</Navbar.Brand> */}
 				{/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
