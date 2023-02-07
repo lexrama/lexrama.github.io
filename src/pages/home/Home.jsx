@@ -22,7 +22,6 @@ const Home = () => {
 				</Row>
 			</Container>
 		</>
-
 	)
 }
 
