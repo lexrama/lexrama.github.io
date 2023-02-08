@@ -1,7 +1,7 @@
 // import React from 'react'
 import ProjectCard from "../../components/project-card/ProjectCard"
 import { Container, Col, Row } from "react-bootstrap"
-import Artally from "../../assets/artally.png"
+// import Artally from "../../assets/artally.png"
 
 const Projects = () => {
   return (
