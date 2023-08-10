@@ -1,3 +1,4 @@
 .project-card {
-	/* display: flex; */
+  display: flex;
+  flex-direction: column;
 }
