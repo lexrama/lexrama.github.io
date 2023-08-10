@@ -1,14 +1,14 @@
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+
 import Resume from "../assets/resume.pdf";
-import { Link } from "react-router-dom";
 
 import "./Header.css";
-
-function Header() {
+export default function Header() {
   return (
-    <Navbar bg="dark" expand="lg">
+    <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
           Alexa Ramachandran
@@ -34,5 +34,3 @@ function Header() {
     </Navbar>
   );
 }
-
-export default Header;

@@ -3,7 +3,7 @@ import React from "react";
 import Microsoft from "../../assets/msft.png";
 import "./Experience.css";
 
-const Experience = () => {
+export default function Experience() {
   return (
     <>
       <div className="experience">
@@ -12,6 +12,4 @@ const Experience = () => {
       </div>
     </>
   );
-};
-
-export default Experience;
+}

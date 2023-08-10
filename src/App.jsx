@@ -11,7 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <BrowserRouter>
@@ -27,5 +27,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
