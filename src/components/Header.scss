@@ -1,13 +1,19 @@
+@import "../../src/consts/consts.scss";
+
 .header {
   align-items: center;
-  background-color: darkgray;
-  color: white;
+  background-color: $navbarHeader;
+  color: $bodyColor;
   display: flex;
-  height: 40px;
+  height: 100%;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
 
   .header__title {
-    font-size: 1.5rem;
-    font-weight: bold;
+    padding: 0px 2 * $spacer;
+    font-size: 48px;
     margin: 0;
   }
 }

@@ -1,30 +1,20 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+
+import "./Footer.scss";
 
 export default function Footer() {
   return (
-    <Navbar fixed="bottom" bg="light" expand="lg">
-      <Container>
-        {/* <Navbar.Brand href="#home">Alexa Ramachandran</Navbar.Brand> */}
-        <Nav>
-          <Nav.Link
-            href="https://linkedin.com/in/lex-rama"
-            className="socials"
-            target="blank"
-          >
-            <AiFillLinkedin />
-          </Nav.Link>
-          <Nav.Link
-            href="https://github.com/lexrama"
-            className="socials"
-            target="blank"
-          >
-            <AiFillGithub />
-          </Nav.Link>
-        </Nav>
-      </Container>
-    </Navbar>
+    <div className="Footer">
+      <a
+        href="https://linkedin.com/in/lex-rama"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <AiFillLinkedin />
+      </a>
+      <a href="https://github.com/lexrama" rel="noreferrer" target="_blank">
+        <AiFillGithub />
+      </a>
+    </div>
   );
 }

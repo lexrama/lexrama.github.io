@@ -1,6 +1,17 @@
-.profile-pic {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
+@import "../../src/consts/consts.scss";
+
+.Home {
+  background-color: $background;
+
+  .body {
+    margin: $spacer * 4;
+    color: $bodyColor;
+
+    .profile-pic {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+  }
 }

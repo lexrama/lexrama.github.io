@@ -1,54 +1,30 @@
-// import React from 'react'
-// import Header from "../../components/Header"
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Image from "react-bootstrap/Image";
-
 import Header from "../components/Header";
+import Footer from "../components/Footer";
+import FlickrCard from "../components/FlickrCard";
+
+import ProfilePicture from "../assets/gradpic.jpeg";
 
 import "./Home.scss";
 
 export default function Home() {
   return (
-    <div className="home">
+    <div className="Home">
       <div className="header">
         <Header />
       </div>
-      <Container>
-        <Row>
-          <Col>
-            <h1>Hi, I'm Alexa.</h1>
-            <p>
-              I'm a recent graduate from Stanford University. More to come soon.
-            </p>
-          </Col>
-          <Col>
-            <Image
-              className="profile-pic"
-              roundedCircle
-              src={require("../assets/gradpic.jpeg")}
-            />
-          </Col>
-        </Row>
-      </Container>
-      <a
-        data-flickr-embed="true"
-        href="https://www.flickr.com/gp/133825690@N04/o1V00164Tp"
-        title="Best Shots"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img
-          src="https://live.staticflickr.com/7675/26497677404_93a53597bf_z.jpg"
-          alt="Best Shots"
-        />
-      </a>
-      <script
-        async
-        src="//embedr.flickr.com/assets/client-code.js"
-        charset="utf-8"
-      />
+      <div className="body">
+        <h1>Hi, I'm Alexa.</h1>
+        <p>
+          Hello! I'm Alexa (she/her), and I'm a recent graduate from Stanford
+          University where Symbolic Systems, concentrating in Human-Centered
+          Artificial Intelligence. I'm passionate about UI/UX design and
+          development, ethics and diversity in tech, and mental health. Please
+          feel free to connect with me for more information!
+        </p>
+        <img className="profile-pic" src={ProfilePicture} alt="Profile" />
+      </div>
+      <FlickrCard className="flickr-card" />
+      <Footer className="footer" />
     </div>
   );
 }
