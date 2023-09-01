@@ -1,0 +1,28 @@
+{
+  "companies": [
+    {
+      "name": "Block Party",
+      "photo": "http://www.example.com/photo.jpg",
+      "date": "April - August 2023",
+      "description": "I worked on cool things"
+    },
+    {
+      "name": "Apple",
+      "photo": "http://www.example.com/photo.jpg",
+      "date": "June - September 2021",
+      "description": "I worked on cool things"
+    },
+    {
+      "name": "Microsoft",
+      "photo": "http://www.example.com/photo.jpg",
+      "date": "June - September 2019",
+      "description": "I worked on cool things"
+    },
+    {
+      "name": "Google",
+      "photo": "http://www.example.com/photo.jpg",
+      "date": "April - August 2023",
+      "description": "I worked on cool things"
+    }
+  ]
+}

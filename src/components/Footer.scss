@@ -1,7 +1,10 @@
 @import "../../src/consts/consts.scss";
 
 .Footer {
-  height: 100%;
+  // height: 100%;
   background-color: $navbarHeader;
   color: $bodyColor;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

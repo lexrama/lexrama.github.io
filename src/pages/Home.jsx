@@ -9,22 +9,23 @@ import "./Home.scss";
 export default function Home() {
   return (
     <div className="Home">
-      <div className="header">
-        <Header />
-      </div>
-      <div className="body">
-        <h1>Hi, I'm Alexa.</h1>
+      <div className="intro">
+        <h1>Hi, I'm Alexa. (she/her)</h1>
         <p>
-          Hello! I'm Alexa (she/her), and I'm a recent graduate from Stanford
-          University where Symbolic Systems, concentrating in Human-Centered
-          Artificial Intelligence. I'm passionate about UI/UX design and
-          development, ethics and diversity in tech, and mental health. Please
-          feel free to connect with me for more information!
+          I'm a recent graduate from Stanford University in{" "}
+          <a
+            href="https://symsys.stanford.edu/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Symbolic Systems
+          </a>
+          , concentrating in Human-Centered Artificial Intelligence. I'm
+          passionate about UI/UX design and development, ethics and diversity in
+          tech, and mental health.
         </p>
-        <img className="profile-pic" src={ProfilePicture} alt="Profile" />
       </div>
-      <FlickrCard className="flickr-card" />
-      <Footer className="footer" />
+      <img className="profile-pic" src={ProfilePicture} alt="Profile" />
     </div>
   );
 }

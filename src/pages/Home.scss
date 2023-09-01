@@ -2,16 +2,25 @@
 
 .Home {
   background-color: $background;
+  color: $bodyColor;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $spacer * 4;
+  width: 75%;
+  margin: auto;
 
-  .body {
-    margin: $spacer * 4;
-    color: $bodyColor;
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: $spacer * 2;
+    max-width: 500px;
+    max-height: 500px;
+  }
 
-    .profile-pic {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
-    }
+  .profile-pic {
+    margin: auto;
+    height: 300px;
+    border-radius: 25px;
   }
 }
