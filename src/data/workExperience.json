@@ -2,27 +2,44 @@
   "companies": [
     {
       "name": "Block Party",
-      "photo": "http://www.example.com/photo.jpg",
+      "photo": "../images/blockparty.webp",
       "date": "April - August 2023",
-      "description": "I worked on cool things"
+      "role": "Software Engineer",
+      "description": ["I worked on cool things"]
     },
     {
       "name": "Apple",
-      "photo": "http://www.example.com/photo.jpg",
+      "photo": "../images/apple.png",
       "date": "June - September 2021",
-      "description": "I worked on cool things"
+      "role": "Software Engineering Intern",
+      "team": "AI/ML Engineering Documentation @ Siri",
+      "description": [
+        "Created foundational system to detect and report outdated internal documents.",
+        "Utilized Gradle to manage projects in Gitbook and Jekyll"
+      ]
     },
     {
       "name": "Microsoft",
-      "photo": "http://www.example.com/photo.jpg",
+      "photo": "../images/msft.png",
       "date": "June - September 2019",
-      "description": "I worked on cool things"
+      "role": "Microsoft Explore Intern",
+      "team": "XBOX Reliability Engineering and Operations Team",
+      "description": [
+        "Developed an internal chatbot for company use to retrieve Business Information on Xbox Titles",
+        "Trained bot with LUIS NLP service and deployed bot live into Azure to be integrated with Microsoft Teams and XboxData Portal",
+        "Acted as both Software Engineer and Program Manager for project"
+      ]
     },
     {
-      "name": "Google",
-      "photo": "http://www.example.com/photo.jpg",
-      "date": "April - August 2023",
-      "description": "I worked on cool things"
+      "name": "Ellington Management",
+      "photo": "../images/ellington.png",
+      "date": "May - July 2018",
+      "role": "Software Engineering Intern",
+      "description": [
+        "Developed common application framework for webdev platform catering to Traders and Business Analysts",
+        "Built out the user interface functionality to provide rapid analysis of data using UI data grids",
+        "Worked on improving the efficiency of the data retrieval software engine by refactoring major modules"
+      ]
     }
   ]
 }

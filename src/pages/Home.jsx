@@ -1,7 +1,3 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import FlickrCard from "../components/FlickrCard";
-
 import ProfilePicture from "../assets/gradpic.jpeg";
 
 import "./Home.scss";
