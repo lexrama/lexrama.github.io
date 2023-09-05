@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.45c06655.css",
-    "main.js": "/static/js/main.dd0229ac.js",
+    "main.js": "/static/js/main.af8e6ff8.js",
     "static/media/gradpic.jpeg": "/static/media/gradpic.5dc323cac85e942d60c5.jpeg",
     "index.html": "/index.html",
     "main.45c06655.css.map": "/static/css/main.45c06655.css.map",
-    "main.dd0229ac.js.map": "/static/js/main.dd0229ac.js.map"
+    "main.af8e6ff8.js.map": "/static/js/main.af8e6ff8.js.map"
   },
   "entrypoints": [
     "static/css/main.45c06655.css",
-    "static/js/main.dd0229ac.js"
+    "static/js/main.af8e6ff8.js"
   ]
 }
