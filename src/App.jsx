@@ -7,7 +7,7 @@ import Contact from "./pages/Contact";
 import Art from "./pages/Art";
 import Projects from "./pages/Projects";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -15,7 +15,7 @@ import "./App.scss";
 
 export default function App() {
   return (
-    <Router>
+    <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
       <Header />
       <div className="content">
         <Routes>
@@ -27,6 +27,6 @@ export default function App() {
         </Routes>
       </div>
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
