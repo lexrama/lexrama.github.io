@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.45c06655.css",
-    "main.js": "/static/js/main.af8e6ff8.js",
-    "static/media/gradpic.jpeg": "/static/media/gradpic.5dc323cac85e942d60c5.jpeg",
-    "index.html": "/index.html",
-    "main.45c06655.css.map": "/static/css/main.45c06655.css.map",
-    "main.af8e6ff8.js.map": "/static/js/main.af8e6ff8.js.map"
+    "main.css": "/lexrama.github.io/static/css/main.45c06655.css",
+    "main.js": "/lexrama.github.io/static/js/main.b24a12a4.js",
+    "static/media/gradpic.jpeg": "/lexrama.github.io/static/media/gradpic.5dc323cac85e942d60c5.jpeg",
+    "index.html": "/lexrama.github.io/index.html",
+    "main.45c06655.css.map": "/lexrama.github.io/static/css/main.45c06655.css.map",
+    "main.b24a12a4.js.map": "/lexrama.github.io/static/js/main.b24a12a4.js.map"
   },
   "entrypoints": [
     "static/css/main.45c06655.css",
-    "static/js/main.af8e6ff8.js"
+    "static/js/main.b24a12a4.js"
   ]
 }
