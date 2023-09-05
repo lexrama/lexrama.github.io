@@ -7,13 +7,7 @@ import Contact from "./pages/Contact";
 import Art from "./pages/Art";
 import Projects from "./pages/Projects";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
