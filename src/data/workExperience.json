@@ -5,7 +5,10 @@
       "photo": "../images/blockparty.webp",
       "date": "April - August 2023",
       "role": "Software Engineer",
-      "description": ["I worked on cool things"]
+      "description": [
+        "Developed Chrome extension to monitor and update privacy settings across Facebook, Twitter, and Venmo",
+        "Used React for front-end and JavaScript for background browser automation scripting and page interaction"
+      ]
     },
     {
       "name": "Apple",

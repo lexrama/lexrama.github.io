@@ -28,6 +28,12 @@ export default function Experience() {
         <ul>
           <li>CS 147: Introduction to Human-Computer Interaction Design</li>
           <li>CS 221: Artificial Intelligence: Principles and Techniques</li>
+          <li>CS 247A: Designing for Artificial Intelligence</li>
+          <li>CS 161: Design and Analysis of Algorithms</li>
+          <li>CS 107E: Computer Systems from the Ground Up</li>
+          <li>CS 106B: Programming Abstractions</li>
+          <li>CS 109: Introduction to Probability for Computer Scientists</li>
+          <li>ENGLISH 106A: A.I., Art, and Activism</li>
         </ul>
       </div>
       <div className="work">
