@@ -1,26 +1,49 @@
 @import "../../src/consts/consts.scss";
 
-.Home {
-  background-color: $background;
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.content {
   color: $bodyColor;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   gap: $spacer * 4;
-  width: 75%;
   margin: auto;
+  padding: $spacer * 4;
+  width: 100%;
+  max-width: 1000px;
 
   .intro {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: $spacer * 2;
-    max-width: 500px;
-    max-height: 500px;
+    width: 100%;
+
+    &__profile-pic {
+      margin: auto;
+      height: 300px;
+      border-radius: 25px;
+    }
   }
 
-  .profile-pic {
-    margin: auto;
-    height: 300px;
-    border-radius: 25px;
+  .resume {
+    text-align: center;
+
+    &__link {
+      color: $bodyColor;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid $bodyColor;
+      border-radius: 12px;
+      padding: $spacer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $bodyColor;
+        color: white;
+      }
+    }
   }
 }
