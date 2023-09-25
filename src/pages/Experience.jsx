@@ -6,15 +6,10 @@ import "./Experience.scss";
 
 export default function Experience() {
   const companies = [...workExperienceData.companies];
-  console.log("companies", companies);
+
   const companyList = companies.map((company) => (
     <WorkExperienceCard {...company} />
   ));
-
-  const stringified = JSON.stringify(workExperienceData.companies);
-  console.log("stringified", stringified);
-  const parsed = JSON.parse(stringified);
-  console.log("parsed", parsed);
 
   return (
     <div className="Experience">

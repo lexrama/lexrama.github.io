@@ -1,1 +1,27 @@
 @import "./consts/consts.scss";
+
+body {
+  background-color: $lightBackground;
+  color: $lightBody;
+
+  a {
+    color: $lightLink;
+
+    &:hover {
+      color: $lightHover;
+    }
+  }
+}
+
+.dark {
+  background-color: $darkBackground;
+  color: $darkBody;
+
+  a {
+    color: $darkLink;
+
+    &:hover {
+      color: $darkHover;
+    }
+  }
+}

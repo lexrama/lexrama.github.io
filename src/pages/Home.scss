@@ -3,11 +3,9 @@
 .header {
   position: sticky;
   top: 0;
-  background-color: $navbarHeader;
 }
 
 .content {
-  color: $bodyColor;
   display: flex;
   flex-direction: column;
   gap: $spacer * 4;
@@ -15,7 +13,6 @@
   padding: $spacer * 4;
   width: 100%;
   max-width: 1000px;
-  background-color: $background;
 
   .intro {
     display: flex;
@@ -35,17 +32,9 @@
 
     &__link {
       text-decoration: none;
-      border: 1px solid $bodyColor;
+      border: 1px solid;
       border-radius: 4px;
       padding: 8px;
-      color: $bodyColor;
-      transition: all 0.1s ease-in-out;
-
-      &:hover {
-        border-color: $bodyColor;
-        background-color: #eeeeee;
-        color: $bodyColor;
-      }
     }
   }
 }
