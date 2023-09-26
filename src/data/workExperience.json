@@ -13,6 +13,7 @@
     {
       "name": "Apple",
       "photo": "../images/apple.png",
+      "darkPhoto": "../images/dark-apple.png",
       "date": "June - September 2021",
       "role": "Software Engineering Intern",
       "team": "AI/ML Engineering Documentation @ Siri",
