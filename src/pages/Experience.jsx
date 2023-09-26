@@ -8,8 +8,6 @@ import { ThemeContext } from "../context/ThemeContext.tsx";
 import "./Experience.scss";
 
 export default function Experience() {
-  const { theme } = useContext(ThemeContext);
-
   const companies = [...workExperienceData.companies];
 
   const companyList = companies.map((company) => (
@@ -20,7 +18,6 @@ export default function Experience() {
     <div className="Experience">
       <div className="education">
         <h1>Education 🎓</h1>
-        {theme}
         <p>
           <strong>Stanford University, class of 2022</strong> <br /> B.S.
           Symbolic Systems, Human-Centered Artificial Intelligence
