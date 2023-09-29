@@ -2,9 +2,6 @@ import WorkExperienceCard from "../components/WorkExperienceCard";
 
 import workExperienceData from "../data/workExperience.json";
 
-import { useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext.tsx";
-
 import "./Experience.scss";
 
 export default function Experience() {
