@@ -1,1 +1,1 @@
-alexa's personal website [here!](lexrama.com)
+alexa's personal website [here!](www.lexrama.com)
