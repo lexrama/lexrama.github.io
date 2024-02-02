@@ -1,6 +1,6 @@
 import WorkExperienceCard from "../../components/WorkExperienceCard";
 
-import workExperienceData from "../../data/workExperienceData.json";
+import workExperienceData from "../../data/workExperience.json";
 
 import "./Experience.scss";
 

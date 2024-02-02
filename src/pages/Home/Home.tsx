@@ -1,7 +1,7 @@
 import ProfilePicture from "../../assets/gradpic.jpeg";
 
 import Header from "../../components/Header";
-// import Experience from "../Experience/Experience";
+import Experience from "../Experience/Experience";
 import Art from "../Art/Art";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
@@ -49,7 +49,7 @@ export default function Home(): JSX.Element {
             view resume
           </a>
         </div>
-        {/* <Experience /> */}
+        <Experience />
         <Projects />
         <Art />
         <Contact />
