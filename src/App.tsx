@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.scss";
 import { useContext } from "react";
-// import { ThemeContext } from "./context/ThemeContext.js";
 import { ThemeContext } from "./context/ThemeContext";
 
 export default function App() {
