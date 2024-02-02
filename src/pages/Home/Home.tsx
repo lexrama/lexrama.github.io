@@ -1,19 +1,20 @@
-import ProfilePicture from "../assets/gradpic.jpeg";
+import ProfilePicture from "../../assets/gradpic.jpeg";
 
-import Header from "../components/Header";
-import Experience from "./Experience";
-import Art from "./Art";
-import Projects from "./Projects";
-import Contact from "./Contact";
+// import Header from "../../components/Header";
+// import Experience from "../Experience";
+// import Art from "../Art";
+// import Projects from "../Projects";
+// import Contact from "../Contact/Contact";
 
-import Resume from "../assets/resume.pdf";
+import Resume from "../../assets/resume.pdf";
+// import Resume from "@/assets/gradpic.jpeg";
 
 import "./Home.scss";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
-      <Header className="header" />
+      {/* <Header className="header" /> */}
       <div className="content">
         <div className="intro">
           <div className="intro__text">
@@ -48,10 +49,10 @@ export default function Home() {
             view resume
           </a>
         </div>
-        <Experience />
+        {/* <Experience />
         <Projects />
         <Art />
-        <Contact />
+        <Contact /> */}
       </div>
     </>
   );

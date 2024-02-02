@@ -1,4 +1,4 @@
-import FlickrCard from "../components/FlickrCard";
+import FlickrCard from "../../components/FlickrCard";
 
 import "./Art.scss";
 
