@@ -1,6 +1,6 @@
 import FlickrCard from "../../components/FlickrCard";
 
-import "./Art.scss";
+import "./Photography.scss";
 
 export default function Art() {
   return (

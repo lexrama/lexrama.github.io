@@ -11,6 +11,9 @@ export default function Header() {
     <div className={`header ${theme}`}>
       <div className="header__title">
         <a href="/">alexa.✨</a>
+        <a className="header__links" href="/photos">
+          photos
+        </a>
         <button className="header__title--theme-toggle" onClick={toggleTheme}>
           {themeToggle}
         </button>

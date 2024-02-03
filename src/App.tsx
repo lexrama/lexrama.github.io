@@ -1,5 +1,6 @@
 // import Home from "./pages/Home/Home.js";
-import Home from "./pages/Home/Home";
+import { Home } from "./pages/Home/Home";
+import Photography from "./pages/Photography/Photography";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -7,12 +8,26 @@ import "./App.scss";
 import { useContext } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Header from "../src/components/Header";
+
 export default function App() {
   const { theme } = useContext(ThemeContext);
 
   return (
     <div className={`${theme}`}>
-      <Home />
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/about" element={<About />} /> */}
+          {/* <Route path="/contact" element={<Contact />} />
+          <Route path="/blogs" element={<Blogs />} /> */}
+          {/* <Route path="/sign-up" element={<SignUp />} /> */}
+          <Route path="/photos" element={<Photography />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
