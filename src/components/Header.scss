@@ -46,7 +46,9 @@
     display: flex;
     flex-direction: row;
     gap: $spacer;
-    margin-left: auto;
+    font-size: x-large;
+    align-items: center;
+
     padding: 0px 2 * $spacer;
   }
 }
