@@ -1,6 +1,16 @@
 {
   "companies": [
     {
+      "name": "Storyboarder",
+      "photo": "../images/storyboarder.png",
+      "date": "October 2023 - Present",
+      "role": "Founding Software Engineer",
+      "description": [
+        "Creating platform for storytelling through comics",
+        "Skills: three.js, React, Prisma, Typescript"
+      ]
+    },
+    {
       "name": "Block Party",
       "photo": "../images/blockparty.webp",
       "date": "April - August 2023",
