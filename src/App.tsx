@@ -8,7 +8,7 @@ import "./App.scss";
 import { useContext } from "react";
 import { ThemeContext, ThemeProvider } from "./context/ThemeContext";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Header from "../src/components/Header";
 import Contact from "./pages/Contact/Contact";
@@ -20,13 +20,13 @@ export default function App() {
   return (
     <ThemeProvider>
       <div className={`${theme}`}>
-        <Router>
+        <Router basename={`/${process.env.PUBLIC_URL}`}>
           <Header />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/photos" element={<Photography />} />
+            <Route path="" element={<Home />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="photos" element={<Photography />} />
           </Routes>
         </Router>
       </div>
