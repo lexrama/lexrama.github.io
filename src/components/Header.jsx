@@ -6,7 +6,6 @@ import { ThemeContext } from "../context/ThemeContext.tsx";
 
 export default function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  console.log(theme, toggleTheme);
   const themeToggle = theme === "light" ? "☀️" : "🌙";
 
   return (

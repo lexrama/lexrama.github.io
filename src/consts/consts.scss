@@ -4,6 +4,13 @@ $background: white;
 $lightBackground: white;
 $darkBackground: black;
 
+:export {
+  navbarHeader: $navbarHeader;
+  background: $background;
+  lightBackground: $lightBackground;
+  darkBackground: $darkBackground;
+}
+
 $lightHover: gray;
 $darkHover: gray;
 

@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import "./Projects.scss";
+import { ThemeContext } from "../../context/ThemeContext";
 
 export default function Projects() {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className="Projects">
+    <div className={`Projects ${theme}`}>
       <h1>Projects 📦</h1>
       <ul>
         <li>
