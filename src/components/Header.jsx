@@ -1,6 +1,7 @@
 import "./Header.scss";
 
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext.tsx";
 
 export default function Header() {
@@ -11,15 +12,15 @@ export default function Header() {
   return (
     <div className={`header ${theme}`}>
       <div className="header__title">
-        <a href="/">alexa.✨</a>
+        <Link to="/">alexa.✨</Link>
         <button className="header__title--theme-toggle" onClick={toggleTheme}>
           {themeToggle}
         </button>
       </div>
       <div className="header__links">
-        <a href="/photos">photos</a>
-        <a href="/projects">projects</a>
-        <a href="/contact">contact</a>
+        <Link to="/photos">photos</Link>
+        <Link to="/projects">projects</Link>
+        <Link to="/contact">contact</Link>
       </div>
     </div>
   );
