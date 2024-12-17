@@ -17,6 +17,8 @@ body {
   background-color: $darkBackground;
   color: $darkBody;
 
+  transition: background-color 0.25s ease;
+
   a {
     color: $darkLink;
 
