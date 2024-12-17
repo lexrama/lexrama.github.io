@@ -27,9 +27,9 @@ export default function App() {
             <Header />
             <Routes>
               <Route path="" element={<Home />} />
-              <Route path="contact" element={<Contact />} />
+              {/* <Route path="contact" element={<Contact />} />
               <Route path="projects" element={<Projects />} />
-              <Route path="photos" element={<Photography />} />
+              <Route path="photos" element={<Photography />} /> */}
             </Routes>
           </Fade>
         </Router>

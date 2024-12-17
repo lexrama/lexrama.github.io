@@ -16,11 +16,11 @@ export default function Header() {
           {themeToggle}
         </button>
       </div>
-      <div className="header__links">
+      {/* <div className="header__links">
         <Link to="/photos">photos</Link>
         <Link to="/projects">projects</Link>
         <Link to="/contact">contact</Link>
-      </div>
+      </div> */}
     </div>
   );
 }
