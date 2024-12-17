@@ -2,7 +2,7 @@ import { useContext } from "react";
 import "./Projects.scss";
 import { ThemeContext } from "../../context/ThemeContext";
 
-export default function Projects() {
+export const Projects = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <div className={`Projects ${theme}`}>
@@ -37,4 +37,4 @@ export default function Projects() {
       </ul>
     </div>
   );
-}
+};

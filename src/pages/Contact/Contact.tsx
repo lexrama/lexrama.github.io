@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import "./Contact.scss";
 
-export default function Contact() {
+export const Contact = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <div className={`Contact ${theme}`}>
@@ -26,7 +26,16 @@ export default function Contact() {
             GitHub
           </a>
         </li>
+        <li>
+          <a
+            href="https://instagram.com/lex.rama"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Instagram
+          </a>
+        </li>
       </ul>
     </div>
   );
-}
+};

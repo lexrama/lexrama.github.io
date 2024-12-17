@@ -4,7 +4,7 @@ import FlickrCard from "../../components/FlickrCard";
 
 import "./Photography.scss";
 
-export default function Art() {
+export const Photography = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -14,4 +14,4 @@ export default function Art() {
       <FlickrCard />
     </div>
   );
-}
+};

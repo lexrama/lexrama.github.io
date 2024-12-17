@@ -1,8 +1,8 @@
 import ProfilePicture from "../../assets/gradpic.jpeg";
 
-import Experience from "../Experience/Experience";
-import Projects from "../Projects/Projects";
-import Contact from "../Contact/Contact";
+import { Experience } from "../Experience/Experience";
+import { Projects } from "../Projects/Projects";
+import { Contact } from "../Contact/Contact";
 
 import Resume from "../../assets/resume.pdf";
 
@@ -10,7 +10,7 @@ import "./Home.scss";
 import { ThemeContext } from "../../context/ThemeContext";
 import { useContext } from "react";
 
-const Home = () => {
+export const Home = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -18,9 +18,9 @@ const Home = () => {
       <div className="content">
         <div className="intro">
           <div className="intro__text">
-            <h1>Hi, I'm Alexa. (she/her)</h1>
+            <h1>Hi, I'm Alexa. 💫 (she/her)</h1>
             <p>
-              I'm a recent graduate from Stanford University in{" "}
+              I'm a recent graduate from Stanford in{" "}
               <a
                 href="https://symsys.stanford.edu/"
                 rel="noreferrer"
@@ -56,5 +56,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

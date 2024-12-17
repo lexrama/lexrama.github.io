@@ -3,14 +3,14 @@ import "./WorkExperienceCard.scss";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext.tsx";
 
-function WorkExperienceCard({
+export const WorkExperienceCard = ({
   photo,
   darkPhoto,
   name,
   date,
   role,
   description,
-}) {
+}) => {
   const { theme } = useContext(ThemeContext);
 
   const descriptionList = description.map((item) => <li>{item}</li>);
@@ -33,6 +33,4 @@ function WorkExperienceCard({
       </div>
     </div>
   );
-}
-
-export default WorkExperienceCard;
+};
