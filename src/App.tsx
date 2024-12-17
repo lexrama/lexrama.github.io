@@ -2,6 +2,8 @@
 import Home from "./pages/Home/Home";
 import Photography from "./pages/Photography/Photography";
 
+import { motion } from "framer-motion";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.scss";
@@ -15,6 +17,7 @@ import Contact from "./pages/Contact/Contact";
 import Projects from "./pages/Projects/Projects";
 
 import { Fade } from "react-reveal";
+import { Blur } from "./Effects";
 
 export default function App() {
   const { theme } = useContext(ThemeContext);
@@ -26,7 +29,14 @@ export default function App() {
           <Fade>
             <Header />
             <Routes>
-              <Route path="" element={<Home />} />
+              <Route
+                path=""
+                element={
+                  <Blur props={{ duration: 0.75 }}>
+                    <Home />
+                  </Blur>
+                }
+              />
               {/* <Route path="contact" element={<Contact />} />
               <Route path="projects" element={<Projects />} />
               <Route path="photos" element={<Photography />} /> */}
