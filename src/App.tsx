@@ -10,7 +10,7 @@ import { Header } from "../src/components/Header";
 import { Home } from "./pages/Home/Home";
 // import { Contact } from "./pages/Contact/Contact";
 // import { Projects } from "./pages/Projects/Projects";
-// import { Photography } from "./pages/Photography/Photography";
+import { Photography } from "./pages/Photography/Photography";
 
 import { Blur } from "./Effects";
 
@@ -30,9 +30,30 @@ export default function App() {
                 </Blur>
               }
             />
-            {/* <Route path="contact" element={<Contact />} />
-              <Route path="projects" element={<Projects />} />
-              <Route path="photos" element={<Photography />} /> */}
+            {/* <Route
+              path="contact"
+              element={
+                <Blur>
+                  <Contact />
+                </Blur>
+              }
+            />
+            <Route
+              path="projects"
+              element={
+                <Blur>
+                  <Projects />
+                </Blur>
+              }
+            /> */}
+            <Route
+              path="photos"
+              element={
+                <Blur>
+                  <Photography />
+                </Blur>
+              }
+            />
           </Routes>
         </Router>
       </div>
