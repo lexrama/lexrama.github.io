@@ -1,6 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useLayoutEffect, useState } from "react";
 
-import variables from "../consts/consts.scss";
+import consts from "../consts/consts.scss";
 
 export const ThemeContext = createContext({
   theme: "light",
@@ -12,9 +12,19 @@ export const ThemeProvider = ({ children }: { children: JSX.Element }) => {
 
   const toggleTheme = () => {
     document.body.style.backgroundColor =
-      theme === "light" ? variables.darkBackground : variables.lightBackground;
+      theme === "light" ? consts.darkBackground : consts.lightBackground;
     setTheme(theme === "light" ? "dark" : "light");
   };
+
+  useLayoutEffect(() => {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      document.body.style.backgroundColor = consts.darkBackground;
+      setTheme("dark");
+    }
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
