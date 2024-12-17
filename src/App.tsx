@@ -14,6 +14,8 @@ import Header from "../src/components/Header";
 import Contact from "./pages/Contact/Contact";
 import Projects from "./pages/Projects/Projects";
 
+import { Fade } from "react-reveal";
+
 export default function App() {
   const { theme } = useContext(ThemeContext);
 
@@ -21,13 +23,15 @@ export default function App() {
     <ThemeProvider>
       <div className={`${theme}`}>
         <Router basename={`/${process.env.PUBLIC_URL}`}>
-          <Header />
-          <Routes>
-            <Route path="" element={<Home />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="projects" element={<Projects />} />
-            <Route path="photos" element={<Photography />} />
-          </Routes>
+          <Fade>
+            <Header />
+            <Routes>
+              <Route path="" element={<Home />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="projects" element={<Projects />} />
+              <Route path="photos" element={<Photography />} />
+            </Routes>
+          </Fade>
         </Router>
       </div>
     </ThemeProvider>
