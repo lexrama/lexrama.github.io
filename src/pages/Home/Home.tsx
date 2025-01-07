@@ -4,7 +4,7 @@ import { Experience } from "../Experience/Experience";
 import { Projects } from "../Projects/Projects";
 import { Contact } from "../Contact/Contact";
 
-import Resume from "../../assets/resume.pdf";
+// import Resume from "../../assets/resume.pdf";
 
 import "./Home.scss";
 import { ThemeContext } from "../../context/ThemeContext";
@@ -39,7 +39,7 @@ export const Home = () => {
             alt="Profile"
           />
         </div>
-        <div className="resume">
+        {/* <div className="resume">
           <a
             href={Resume}
             target="_blank"
@@ -48,7 +48,7 @@ export const Home = () => {
           >
             view resume
           </a>
-        </div>
+        </div> */}
         <Experience />
         <Projects />
         <Contact />
