@@ -28,9 +28,7 @@ export const Home = () => {
               >
                 Symbolic Systems
               </a>
-              , concentrating in Human-Centered Artificial Intelligence. I'm
-              passionate about UI/UX design and development, ethics and
-              diversity in tech, and mental health.
+              , concentrating in Human-Centered Artificial Intelligence.
             </p>
           </div>
           <img
