@@ -4,8 +4,6 @@ body {
   background-color: $lightBackground;
   color: $lightBody;
 
-  overflow: scroll;
-
   a {
     color: $lightLink;
 
@@ -18,8 +16,6 @@ body {
 .dark {
   background-color: $darkBackground;
   color: $darkBody;
-
-  transition: background-color 0.25s ease;
 
   a {
     color: $darkLink;
