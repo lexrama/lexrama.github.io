@@ -1,5 +1,3 @@
-@import "../../src/consts/consts.css";
-
 .header {
   background-color: var(--navbar-header);
   display: flex;

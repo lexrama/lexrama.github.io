@@ -1,4 +1,5 @@
 :root {
+  --header-height: 80px; /* Set to the height of your header */
   --navbar-header: #fff;
   --header-z-index: 1000;
   --spacer: 16px;

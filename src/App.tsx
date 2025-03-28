@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import "./global.css";
+
 import "./App.scss";
 import { useContext } from "react";
 import { ThemeContext, ThemeProvider } from "./context/ThemeContext";

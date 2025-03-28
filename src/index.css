@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding-top: 80px;
+  padding-top: var(--header-height); /* Dynamically sets the padding */
   font-family: "Open Sans", sans-serif;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", */

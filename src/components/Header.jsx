@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext.tsx";
+import { Blur } from "../Effects.tsx";
+
 import styles from "./Header.module.css";
 
 export const Header = () => {
@@ -8,9 +10,7 @@ export const Header = () => {
   const themeToggle = theme === "light" ? "☀️" : "🌙";
 
   return (
-    <header
-      className={`${styles.header} ${theme === "dark" ? styles.dark : ""}`}
-    >
+    <Blur className={`${styles.header} ${theme === "dark" ? styles.dark : ""}`}>
       <div className={styles.headerTitle}>
         <Link to="/">alexa.✨</Link>
         <button className={styles.themeToggle} onClick={toggleTheme}>
@@ -22,6 +22,7 @@ export const Header = () => {
         {/* <Link to="/projects">projects</Link>
         <Link to="/contact">contact</Link> */}
       </nav>
-    </header>
+      {/* </header> */}
+    </Blur>
   );
 };
