@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import "./Projects.scss";
-import { ThemeContext } from "../../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 
 export const Projects = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
   return (
     <div className={`Projects ${theme}`}>
       <h1>Projects 📦</h1>

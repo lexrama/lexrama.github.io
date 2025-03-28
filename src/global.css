@@ -3,4 +3,36 @@
   --navbar-header: #fff;
   --header-z-index: 1000;
   --spacer: 16px;
+
+  --background-color: white;
+  --hover-color: gray;
+  --body-color: black;
+  --link-color: black;
+  --background-hover-color: #f0f0f0;
+  --text-color: black;
+}
+
+/* Dark theme */
+.dark-mode {
+  --navbar-header: #000;
+  --background-color: black;
+  --hover-color: gray;
+  --body-color: white;
+  --link-color: white;
+  --background-hover-color: #333;
+  --text-color: white;
+}
+
+/* Apply background and text color globally */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
 }

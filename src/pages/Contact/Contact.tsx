@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 import "./Contact.scss";
 
 export const Contact = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
   return (
     <div className={`Contact ${theme}`}>
       <h1>Contact 💬</h1>

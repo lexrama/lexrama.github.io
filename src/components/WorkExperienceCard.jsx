@@ -1,7 +1,6 @@
 import "./WorkExperienceCard.scss";
 
-import { useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext.tsx";
+import { useTheme } from "../context/ThemeContext";
 
 export const WorkExperienceCard = ({
   photo,
@@ -11,9 +10,9 @@ export const WorkExperienceCard = ({
   role,
   description,
 }) => {
-  const { theme } = useContext(ThemeContext);
-
   const descriptionList = description.map((item) => <li>{item}</li>);
+
+  const { theme } = useTheme();
 
   const photoSrc = darkPhoto && theme === "dark" ? darkPhoto : photo;
 

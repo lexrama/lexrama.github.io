@@ -1,10 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "./global.css";
 
-import "./App.scss";
-import { useContext } from "react";
-import { ThemeContext, ThemeProvider } from "./context/ThemeContext";
+import { ThemeProvider } from "./context/ThemeContext";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -17,22 +14,20 @@ import { Photography } from "./pages/Photography/Photography";
 import { Blur } from "./Effects";
 
 export default function App() {
-  const { theme } = useContext(ThemeContext);
   return (
     <ThemeProvider>
-      <div className={`${theme}`}>
-        <Router basename={`/${process.env.PUBLIC_URL}`}>
-          <Header />
-          <Routes>
-            <Route
-              path=""
-              element={
-                <Blur>
-                  <Home />
-                </Blur>
-              }
-            />
-            {/* <Route
+      <Router basename={`/${process.env.PUBLIC_URL}`}>
+        <Header />
+        <Routes>
+          <Route
+            path=""
+            element={
+              <Blur>
+                <Home />
+              </Blur>
+            }
+          />
+          {/* <Route
               path="contact"
               element={
                 <Blur>
@@ -48,17 +43,16 @@ export default function App() {
                 </Blur>
               }
             /> */}
-            <Route
-              path="photos"
-              element={
-                <Blur>
-                  <Photography />
-                </Blur>
-              }
-            />
-          </Routes>
-        </Router>
-      </div>
+          <Route
+            path="photos"
+            element={
+              <Blur>
+                <Photography />
+              </Blur>
+            }
+          />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }

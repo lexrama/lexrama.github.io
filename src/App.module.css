@@ -1,0 +1,11 @@
+body {
+  color: var(--body-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--hover-color);
+}
