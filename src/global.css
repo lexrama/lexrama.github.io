@@ -2,7 +2,10 @@
   --header-height: 80px; /* Set to the height of your header */
   --navbar-header: #fff;
   --header-z-index: 1000;
+
   --spacer: 16px;
+  --spacer-2: calc(var(--spacer) * 2);
+  --spacer-4: calc(var(--spacer) * 4);
 
   --background-color: white;
   --hover-color: gray;

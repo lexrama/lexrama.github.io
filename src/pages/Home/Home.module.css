@@ -1,0 +1,36 @@
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer-4);
+  margin: auto;
+  padding: var(--spacer-4);
+  width: 100%;
+  max-width: 1000px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacer-2);
+  width: 100%;
+}
+.profilePic {
+  margin: auto;
+  height: 300px;
+  border-radius: 25px;
+}
+
+.resume {
+  text-align: center;
+}
+.link {
+  text-decoration: none;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 8px;
+}

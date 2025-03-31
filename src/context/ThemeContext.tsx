@@ -23,7 +23,7 @@ export const ThemeProvider = ({ children }) => {
 
   const [theme, setTheme] = useState(storedVal);
 
-  const toggleTheme = () => {
+  const toggleTheme = (): void => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
 

@@ -2,11 +2,11 @@ import { WorkExperienceCard } from "../../components/WorkExperienceCard";
 import workExperienceData from "../../data/workExperience.json";
 import classes from "../../data/classes.json";
 
-import "./Experience.scss";
+import styles from "./Experience.module.css";
 
 export const Experience = () => (
-  <div className="Experience">
-    <div className="education">
+  <div className={styles.Experience}>
+    <div className={styles.education}>
       <h1>Education 🎓</h1>
       <p>
         <strong>Stanford University, class of 2022</strong> <br /> B.S. Symbolic
@@ -19,9 +19,9 @@ export const Experience = () => (
         ))}
       </ul>
     </div>
-    <div className="work">
+    <div className={styles.work}>
       <h1>Work Experience 👩🏾‍💻</h1>
-      <div className="work__experience-cards">
+      <div className={styles.experienceCards}>
         {[...workExperienceData.companies].map((company) => (
           <WorkExperienceCard {...company} />
         ))}

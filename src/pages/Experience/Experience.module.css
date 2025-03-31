@@ -1,0 +1,18 @@
+.Experience {
+  display: flex;
+  flex-direction: column;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.experienceCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: left;
+}

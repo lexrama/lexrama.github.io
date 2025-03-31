@@ -1,18 +1,18 @@
 import ProfilePicture from "../../assets/gradpic.jpeg";
 
-// import { Experience } from "../Experience/Experience";
-// import { Projects } from "../Projects/Projects";
-// import { Contact } from "../Contact/Contact";
+import { Experience } from "../Experience/Experience";
+import { Projects } from "../Projects/Projects";
+import { Contact } from "../Contact/Contact";
 
 // import Resume from "../../assets/resume.pdf";
 
-import "./Home.scss";
+import styles from "./Home.module.css";
 
-export const Home = () => {
+export const Home = (): JSX.Element => {
   return (
-    <div className="content">
-      <div className="intro">
-        <div className="intro__text">
+    <div className={styles.content}>
+      <div className={styles.intro}>
+        <div className={styles.introText}>
           <h1>Hi, I'm Alexa. 💫 (she/her)</h1>
           <p>
             I'm a recent graduate from Stanford in{" "}
@@ -26,11 +26,7 @@ export const Home = () => {
             , concentrating in Human-Centered Artificial Intelligence.
           </p>
         </div>
-        <img
-          className="intro__profile-pic"
-          src={ProfilePicture}
-          alt="Profile"
-        />
+        <img className={styles.profilePic} src={ProfilePicture} alt="Profile" />
       </div>
       {/* <div className="resume">
           <a
@@ -42,9 +38,9 @@ export const Home = () => {
             view resume
           </a>
         </div> */}
-      {/* <Experience />
-        <Projects />
-        <Contact /> */}
+      <Experience />
+      <Projects />
+      <Contact />
     </div>
   );
 };
