@@ -5,3 +5,9 @@
   justify-content: center;
   padding: 20px;
 }
+
+.gallery {
+  width: "75%";
+  align-items: "center";
+  margin: "0 auto";
+}
