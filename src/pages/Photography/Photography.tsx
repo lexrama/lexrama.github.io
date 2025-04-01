@@ -52,10 +52,10 @@ const photos = [
     src: "../images/photography/portfolio_9.jpg",
     ...vertical,
   },
-  {
-    src: "../images/photography/portfolio_10.jpg",
-    ...horizontal,
-  },
+  // {
+  //   src: "../images/photography/portfolio_10.jpg",
+  //   ...horizontal,
+  // },
   {
     src: "../images/photography/portfolio_11.jpg",
     ...vertical,
