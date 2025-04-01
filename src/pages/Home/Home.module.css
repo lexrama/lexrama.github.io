@@ -19,6 +19,7 @@
   gap: var(--spacer-2);
   width: 100%;
 }
+
 .profilePic {
   margin: auto;
   height: 300px;
@@ -28,6 +29,7 @@
 .resume {
   text-align: center;
 }
+
 .link {
   text-decoration: none;
   border: 1px solid;
