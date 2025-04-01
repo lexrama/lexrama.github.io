@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.7cf9ed7d.css",
-    "main.js": "/static/js/main.cc7b2d43.js",
+    "main.css": "/static/css/main.6f5c61ad.css",
+    "main.js": "/static/js/main.6a1d6cf3.js",
     "static/media/gradpic.jpeg": "/static/media/gradpic.5dc323cac85e942d60c5.jpeg",
     "index.html": "/index.html",
-    "main.7cf9ed7d.css.map": "/static/css/main.7cf9ed7d.css.map",
-    "main.cc7b2d43.js.map": "/static/js/main.cc7b2d43.js.map"
+    "main.6f5c61ad.css.map": "/static/css/main.6f5c61ad.css.map",
+    "main.6a1d6cf3.js.map": "/static/js/main.6a1d6cf3.js.map"
   },
   "entrypoints": [
-    "static/css/main.7cf9ed7d.css",
-    "static/js/main.cc7b2d43.js"
+    "static/css/main.6f5c61ad.css",
+    "static/js/main.6a1d6cf3.js"
   ]
 }
