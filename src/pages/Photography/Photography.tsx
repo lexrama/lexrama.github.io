@@ -74,6 +74,13 @@ export const Photography = () => {
           </a>{" "}
           to see my full portfolio on Flickr
         </p>
+        <p>
+          contact me at{" "}
+          <a href="mailto:alexaramachandran@gmail.com">
+            alexaramachandran@gmail.com
+          </a>{" "}
+          for any inquiries!
+        </p>
 
         {/* <FlickrCard /> */}
       </div>

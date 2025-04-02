@@ -9,7 +9,7 @@ export const Contact = () => {
       <p>Let's connect via:</p>
       <ul>
         <li>
-          <a href="mailto:alexarama@alumni.stanford.edu">email</a>
+          <a href="mailto:alexaramachandran@gmail.com">email</a>
         </li>
         <li>
           <a
