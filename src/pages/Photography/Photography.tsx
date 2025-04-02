@@ -1,10 +1,7 @@
-// import FlickrCard from "../../components/FlickrCard";
-
-import Gallery from "react-photo-gallery";
+import { RowsPhotoAlbum } from "react-photo-album";
 
 import styles from "./Photography.module.css";
-// import { Blur } from "../../Effects";
-import { Suspense } from "react";
+import "react-photo-album/rows.css";
 
 const vertical = {
   width: 2,
@@ -42,7 +39,7 @@ const photos = [
   },
   {
     src: "../images/photography/portfolio_7.jpg",
-    ...horizontal,
+    ...vertical,
   },
   {
     src: "../images/photography/portfolio_8.jpg",
@@ -54,10 +51,14 @@ const photos = [
   },
   {
     src: "../images/photography/portfolio_10.jpg",
-    ...vertical,
+    ...horizontal,
   },
   {
     src: "../images/photography/portfolio_11.jpg",
+    ...horizontal,
+  },
+  {
+    src: "../images/photography/portfolio_12.jpg",
     ...horizontal,
   },
 ];
@@ -85,11 +86,12 @@ export const Photography = () => {
           paddingBottom: "2%",
         }}
       >
-        {/* <Blur> */}
-        <Suspense fallback={<div>Loading...</div>}>
-          <Gallery photos={photos} margin={4} />
-        </Suspense>
-        {/* </Blur> */}
+        <RowsPhotoAlbum
+          photos={photos}
+          componentsProps={() => ({
+            image: { loading: "lazy" },
+          })}
+        />
       </div>
     </>
   );
