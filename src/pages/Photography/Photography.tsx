@@ -1,7 +1,8 @@
-import { RowsPhotoAlbum } from "react-photo-album";
+import { CommonPhotoAlbumProps, RowsPhotoAlbum } from "react-photo-album";
 
 import styles from "./Photography.module.css";
 import "react-photo-album/rows.css";
+import { Suspense } from "react";
 
 const vertical = {
   width: 2,
@@ -12,7 +13,11 @@ const horizontal = {
   height: 2,
 };
 
-const photos = [
+const photos: CommonPhotoAlbumProps<{
+  width: number;
+  height: number;
+  src: string;
+}>["photos"] = [
   {
     src: "../images/photography/portfolio_1.jpg",
     ...vertical,
@@ -23,6 +28,14 @@ const photos = [
   },
   {
     src: "../images/photography/portfolio_3.jpg",
+    ...horizontal,
+  },
+  // {
+  //   src: "../images/photography/portfolio_13.jpg",
+  //   ...vertical,
+  // },
+  {
+    src: "../images/photography/portfolio_14.jpg",
     ...horizontal,
   },
   {
@@ -37,6 +50,7 @@ const photos = [
     src: "../images/photography/portfolio_6.jpg",
     ...horizontal,
   },
+
   {
     src: "../images/photography/portfolio_7.jpg",
     ...vertical,
@@ -95,9 +109,20 @@ export const Photography = () => {
       >
         <RowsPhotoAlbum
           photos={photos}
-          componentsProps={() => ({
-            image: { loading: "lazy" },
-          })}
+          render={{
+            image(props, context) {
+              console.log("props", props);
+              return (
+                <Suspense fallback={<div>Loading...</div>}>
+                  <img
+                    {...props}
+                    onLoad={(e) => console.log("loaded", e, props.src)}
+                    alt={props["aria-label"]}
+                  />
+                </Suspense>
+              );
+            },
+          }}
         />
       </div>
     </>
