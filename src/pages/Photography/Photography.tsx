@@ -39,6 +39,14 @@ const photos: CommonPhotoAlbumProps<{
     ...horizontal,
   },
   {
+    src: "../images/photography/portfolio_15.jpg",
+    ...vertical,
+  },
+  {
+    src: "../images/photography/portfolio_16.jpg",
+    ...horizontal,
+  },
+  {
     src: "../images/photography/portfolio_4.jpg",
     ...horizontal,
   },
