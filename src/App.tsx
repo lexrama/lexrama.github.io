@@ -9,7 +9,11 @@ import { Header } from "../src/components/Header";
 import { Home } from "./pages/Home/Home";
 // import { Contact } from "./pages/Contact/Contact";
 // import { Projects } from "./pages/Projects/Projects";
-import { Photography } from "./pages/Photography/Photography";
+import {
+  DigitalPage,
+  FilmPage,
+  Photography,
+} from "./pages/Photography/Photography";
 
 import { Blur } from "./Effects";
 
@@ -51,6 +55,8 @@ export default function App() {
               </Blur>
             }
           />
+          <Route path="photos/digital" element={<DigitalPage />} />
+          <Route path="photos/film" element={<FilmPage />} />
         </Routes>
       </Router>
     </ThemeProvider>
