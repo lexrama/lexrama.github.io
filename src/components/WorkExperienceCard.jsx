@@ -20,7 +20,7 @@ export const WorkExperienceCard = ({
     <div className="WorkExperienceCard">
       <div className="WorkExperienceCard__header">
         <img className="company-logo" src={photoSrc} alt="Company Logo" />
-        <div className="company-name">{name}</div>
+        <div className="company-name">{name }</div>
       </div>
 
       <div className="WorkExperienceCard__content">
