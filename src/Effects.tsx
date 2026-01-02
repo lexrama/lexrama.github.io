@@ -11,9 +11,10 @@ export const Blur = ({
 }): React.JSX.Element => (
   <motion.div
     className={className}
-    initial={{ opacity: 0, filter: "blur(10px)" }}
+    style={{ willChange: "filter, opacity", transform: "translateZ(0)" }}
+    initial={{ opacity: 0, filter: "blur(8px)" }}
     animate={{ opacity: 1, filter: "blur(0px)" }}
-    exit={{ opacity: 0, filter: "blur(10px)" }}
+    exit={{ opacity: 0, filter: "blur(8px)" }}
     transition={{ duration }}
   >
     {children}

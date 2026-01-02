@@ -1,9 +1,9 @@
 import { CommonPhotoAlbumProps, RowsPhotoAlbum } from "react-photo-album";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./Photography.module.css";
 import "react-photo-album/rows.css";
-import { Suspense } from "react";
-import { Link } from "react-router-dom";
 
 const vertical = {
   width: 2,
@@ -34,10 +34,6 @@ const digitalPhotos: CommonPhotoAlbumProps<{
     src: `${digitalURL}/portfolio_3.jpg`,
     ...horizontal,
   },
-  // {
-  //   src: "../images/photography/portfolio_13.jpg",
-  //   ...vertical,
-  // },
   {
     src: `${digitalURL}/portfolio_14.jpg`,
     ...horizontal,
@@ -131,6 +127,48 @@ const filmPhotos: CommonPhotoAlbumProps<{
   },
 ];
 
+// Spinner component
+const Spinner = () => (
+  <div className={styles.spinnerContainer}>
+    <div className={styles.spinner}></div>
+    <p className={styles.loadingText}>Loading photos...</p>
+  </div>
+);
+
+// Hook to preload images using Image objects
+const useImagePreloader = (photos: { src: string }[]) => {
+  const [allLoaded, setAllLoaded] = useState(false);
+
+  useEffect(() => {
+    let isMounted = true;
+    let loadedCount = 0;
+    const totalCount = photos.length;
+    const counted = new Set<string>();
+
+    const markLoaded = (src: string) => {
+      if (counted.has(src)) return; // Prevent double-counting
+      counted.add(src);
+      loadedCount++;
+      if (loadedCount >= totalCount && isMounted) {
+        setAllLoaded(true);
+      }
+    };
+
+    photos.forEach((photo) => {
+      const img = new Image();
+      img.onload = () => markLoaded(photo.src);
+      img.onerror = () => markLoaded(photo.src);
+      img.src = photo.src;
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [photos]);
+
+  return allLoaded;
+};
+
 const PhotoHeader = () => {
   return (
     <>
@@ -155,11 +193,16 @@ const PhotoHeader = () => {
 };
 
 export const DigitalPage = () => {
+  const allLoaded = useImagePreloader(digitalPhotos);
+
   return (
     <>
       <PhotoHeader />
+      {!allLoaded && <Spinner />}
       <div
-        className={styles.gallery}
+        className={`${styles.gallery} ${
+          allLoaded ? styles.fadeIn : styles.hidden
+        }`}
         style={{
           width: "75%",
           alignItems: "center",
@@ -167,33 +210,23 @@ export const DigitalPage = () => {
           paddingBottom: "2%",
         }}
       >
-        <RowsPhotoAlbum
-          photos={digitalPhotos}
-          render={{
-            image(props, context) {
-              return (
-                <Suspense fallback={<div>Loading...</div>}>
-                  <img
-                    {...props}
-                    onLoad={(e) => console.log("loaded", e, props.src)}
-                    alt={props["aria-label"]}
-                  />
-                </Suspense>
-              );
-            },
-          }}
-        />
+        <RowsPhotoAlbum photos={digitalPhotos} />
       </div>
     </>
   );
 };
 
 export const FilmPage = () => {
+  const allLoaded = useImagePreloader(filmPhotos);
+
   return (
     <>
       <PhotoHeader />
+      {!allLoaded && <Spinner />}
       <div
-        className={styles.gallery}
+        className={`${styles.gallery} ${
+          allLoaded ? styles.fadeIn : styles.hidden
+        }`}
         style={{
           width: "75%",
           alignItems: "center",
@@ -201,22 +234,7 @@ export const FilmPage = () => {
           paddingBottom: "2%",
         }}
       >
-        <RowsPhotoAlbum
-          photos={filmPhotos}
-          render={{
-            image(props, context) {
-              return (
-                <Suspense fallback={<div>Loading...</div>}>
-                  <img
-                    {...props}
-                    onLoad={(e) => console.log("loaded", e, props.src)}
-                    alt={props["aria-label"]}
-                  />
-                </Suspense>
-              );
-            },
-          }}
-        />
+        <RowsPhotoAlbum photos={filmPhotos} />
       </div>
     </>
   );
