@@ -1,4 +1,4 @@
-import ProfilePicture from "../../assets/gradpic.jpeg";
+import ProfilePicture from "../../assets/profile.jpg";
 
 import { Experience } from "../Experience/Experience";
 import { Projects } from "../Projects/Projects";
