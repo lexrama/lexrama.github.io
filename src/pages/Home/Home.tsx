@@ -13,8 +13,8 @@ export const Home = (): JSX.Element => {
         <div className={styles.introText}>
           <h1>Hi, I'm Alexa. 💫</h1>
           <p>
-            I'm a software engineer focused on building technology that
-            amplifies human potential and democratizes access. I work to create
+            I'm a software engineer focused on building and increasing access to
+            technology that amplifies human potential. I work to create
             meaningful impact by building tools that improve people's lives. I
             graduated from Stanford in{" "}
             <a
