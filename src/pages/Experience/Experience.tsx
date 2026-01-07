@@ -6,6 +6,14 @@ import styles from "./Experience.module.css";
 
 export const Experience = () => (
   <div className={styles.Experience}>
+    <div className={styles.work}>
+      <h1>Work Experience 👩🏾‍💻</h1>
+      <div className={styles.experienceCards}>
+        {[...workExperienceData.companies].map((company) => (
+          <WorkExperienceCard {...company} />
+        ))}
+      </div>
+    </div>
     <div className={styles.education}>
       <h1>Education 🎓</h1>
       <p>
@@ -18,14 +26,6 @@ export const Experience = () => (
           <li>{course}</li>
         ))}
       </ul>
-    </div>
-    <div className={styles.work}>
-      <h1>Work Experience 👩🏾‍💻</h1>
-      <div className={styles.experienceCards}>
-        {[...workExperienceData.companies].map((company) => (
-          <WorkExperienceCard {...company} />
-        ))}
-      </div>
     </div>
   </div>
 );

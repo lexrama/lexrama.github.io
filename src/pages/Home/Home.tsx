@@ -4,8 +4,6 @@ import { Experience } from "../Experience/Experience";
 import { Projects } from "../Projects/Projects";
 import { Contact } from "../Contact/Contact";
 
-// import Resume from "../../assets/resume.pdf";
-
 import styles from "./Home.module.css";
 
 export const Home = (): JSX.Element => {
@@ -13,9 +11,12 @@ export const Home = (): JSX.Element => {
     <div className={styles.content}>
       <div className={styles.intro}>
         <div className={styles.introText}>
-          <h1>Hi, I'm Alexa. 💫 (she/her)</h1>
+          <h1>Hi, I'm Alexa. 💫</h1>
           <p>
-            I'm a recent graduate from Stanford in{" "}
+            I'm a software engineer focused on building technology that
+            amplifies human potential and democratizes access. I work to create
+            meaningful impact by building tools that improve people's lives. I
+            graduated from Stanford in{" "}
             <a
               href="https://symsys.stanford.edu/"
               rel="noreferrer"
@@ -28,16 +29,6 @@ export const Home = (): JSX.Element => {
         </div>
         <img className={styles.profilePic} src={ProfilePicture} alt="Profile" />
       </div>
-      {/* <div className="resume">
-          <a
-            href={Resume}
-            target="_blank"
-            rel="noreferrer"
-            className="resume__link"
-          >
-            view resume
-          </a>
-        </div> */}
       <Experience />
       <Projects />
       <Contact />
