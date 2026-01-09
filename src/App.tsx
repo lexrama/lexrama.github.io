@@ -1,19 +1,12 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./global.css";
-
 import { ThemeProvider } from "./context/ThemeContext";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Header } from "../src/components/Header";
-import { Home } from "./pages/Home/Home";
+import { Home } from "./pages/Home";
 // import { Contact } from "./pages/Contact/Contact";
 // import { Projects } from "./pages/Projects/Projects";
-import {
-  DigitalPage,
-  FilmPage,
-  Photography,
-} from "./pages/Photography/Photography";
+import { DigitalPage, FilmPage, Photography } from "./pages/Photography";
 
 import { Blur } from "./Effects";
 
@@ -31,22 +24,6 @@ export default function App() {
               </Blur>
             }
           />
-          {/* <Route
-              path="contact"
-              element={
-                <Blur>
-                  <Contact />
-                </Blur>
-              }
-            />
-            <Route
-              path="projects"
-              element={
-                <Blur>
-                  <Projects />
-                </Blur>
-              }
-            /> */}
           <Route
             path="photos"
             element={

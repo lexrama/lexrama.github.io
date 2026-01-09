@@ -5,8 +5,6 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "react-photo-album/rows.css";
 
-import styles from "./Photography.module.css";
-
 interface Photo {
   src: string;
   width: number;
@@ -125,14 +123,14 @@ const useImagePreloader = (photos: Photo[]) => {
 };
 
 const Spinner = () => (
-  <div className={styles.spinnerContainer}>
-    <div className={styles.spinner}></div>
-    <p className={styles.loadingText}>Loading photos...</p>
+  <div className="flex flex-col items-center justify-center py-20 px-5 gap-4">
+    <div className="w-12 h-12 border-4 border-gray-300 border-t-current rounded-full animate-spin"></div>
+    <p className="text-sm opacity-70 m-0">Loading photos...</p>
   </div>
 );
 
 const PhotoHeader = () => (
-  <div className={styles.content}>
+  <div className="flex flex-col items-center justify-center p-5">
     <h1>Photography 📸</h1>
     <p>
       <a href="https://www.flickr.com/gp/133825690@N04/o1V00164Tp">
@@ -164,9 +162,9 @@ const PhotoGalleryView = ({ photos }: PhotoGalleryViewProps) => {
       <PhotoHeader />
       {!allLoaded && <Spinner />}
       <div
-        className={`${styles.gallery} ${
-          allLoaded ? styles.fadeIn : styles.hidden
-        }`}
+        className={`w-3/4 mx-auto pb-[2%] ${
+          allLoaded ? 'animate-fadeIn' : 'fixed left-[-9999px] top-0 opacity-0 pointer-events-none'
+        } [&_img]:cursor-pointer [&_img]:transition-all [&_img]:duration-300 [&_img]:rounded [&_img]:outline-none [&_img:hover]:scale-105 [&_img:hover]:opacity-90 [&_img:hover]:shadow-lg [&_img:focus]:outline-none [&_img:active]:outline-none`}
       >
         <RowsPhotoAlbum
           photos={photos}
@@ -193,9 +191,19 @@ export const FilmPage = () => <PhotoGalleryView photos={filmPhotos} />;
 export const Photography = () => (
   <>
     <PhotoHeader />
-    <div className={styles.links}>
-      <Link to="/photos/digital">digital</Link>
-      <Link to="/photos/film">film</Link>
+    <div className="flex justify-center gap-10 mt-10 p-5">
+      <Link 
+        to="/photos/digital" 
+        className="py-3 px-8 text-lg font-medium no-underline border-2 border-current rounded-lg transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+      >
+        digital
+      </Link>
+      <Link 
+        to="/photos/film" 
+        className="py-3 px-8 text-lg font-medium no-underline border-2 border-current rounded-lg transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+      >
+        film
+      </Link>
     </div>
   </>
 );

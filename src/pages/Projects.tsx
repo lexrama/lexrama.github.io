@@ -1,11 +1,7 @@
-import "./Projects.scss";
-import { useTheme } from "../../context/ThemeContext";
-
 export const Projects = () => {
-  const { theme } = useTheme();
   return (
-    <div className={`Projects ${theme}`}>
-      <h1>Projects 📦</h1>
+    <div>
+      <h1 className="text-2xl font-bold mb-4">Projects 📦</h1>
       <ul>
         <li>
           <a

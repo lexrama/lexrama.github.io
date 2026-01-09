@@ -31,7 +31,7 @@ export const ThemeProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark-mode", theme === "dark");
+    document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme]);
 
   return (

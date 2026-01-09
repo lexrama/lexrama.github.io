@@ -1,21 +1,19 @@
-import { WorkExperienceCard } from "../../components/WorkExperienceCard";
-import workExperienceData from "../../data/workExperience.json";
-import classes from "../../data/classes.json";
-
-import styles from "./Experience.module.css";
+import { WorkExperienceCard } from "../components/WorkExperienceCard";
+import workExperienceData from "../data/workExperience.json";
+import classes from "../data/classes.json";
 
 export const Experience = () => (
-  <div className={styles.Experience}>
-    <div className={styles.work}>
-      <h1>Work Experience 👩🏾‍💻</h1>
-      <div className={styles.experienceCards}>
+  <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4">
+      <h1 className="text-2xl font-bold mb-4">Work Experience 👩🏾‍💻</h1>
+      <div className="flex flex-row flex-wrap gap-4 justify-left">
         {[...workExperienceData.companies].map((company) => (
           <WorkExperienceCard {...company} />
         ))}
       </div>
     </div>
-    <div className={styles.education}>
-      <h1>Education 🎓</h1>
+    <div>
+      <h1 className="text-2xl font-bold mb-4">Education 🎓</h1>
       <p>
         <strong>Stanford University, class of 2022</strong> <br /> B.S. Symbolic
         Systems, Human-Centered Artificial Intelligence

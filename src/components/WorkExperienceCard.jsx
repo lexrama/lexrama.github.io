@@ -1,5 +1,3 @@
-import "./WorkExperienceCard.scss";
-
 import { useTheme } from "../context/ThemeContext";
 
 export const WorkExperienceCard = ({
@@ -17,18 +15,18 @@ export const WorkExperienceCard = ({
   const photoSrc = darkPhoto && theme === "dark" ? darkPhoto : photo;
 
   return (
-    <div className="WorkExperienceCard">
-      <div className="WorkExperienceCard__header">
-        <img className="company-logo" src={photoSrc} alt="Company Logo" />
-        <div className="company-name">{name }</div>
+    <div className="relative flex flex-col p-4 border-2 border-gray-500 rounded-[15px] w-[400px]">
+      <div className="relative flex gap-4 items-center text-2xl">
+        <img className="max-w-[44px] max-h-[44px]" src={photoSrc} alt="Company Logo" />
+        <div>{name}</div>
       </div>
 
-      <div className="WorkExperienceCard__content">
-        <div className="role">
+      <div className="mt-2.5 relative flex flex-col gap-4">
+        <div>
           <strong>{role}</strong>
         </div>
-        <div className="date">{date}</div>
-        <div className="description">{descriptionList}</div>
+        <div className="text-sm text-gray-500">{date}</div>
+        <div className="text-sm ml-2.5">{descriptionList}</div>
       </div>
     </div>
   );

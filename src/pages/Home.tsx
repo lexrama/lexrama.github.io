@@ -1,17 +1,14 @@
-import ProfilePicture from "../../assets/profile.jpg";
-
-import { Experience } from "../Experience/Experience";
-import { Projects } from "../Projects/Projects";
-import { Contact } from "../Contact/Contact";
-
-import styles from "./Home.module.css";
+import ProfilePicture from "../assets/profile.jpg";
+import { Contact } from "./Contact";
+import { Experience } from "./Experience";
+import { Projects } from "./Projects";
 
 export const Home = (): JSX.Element => {
   return (
-    <div className={styles.content}>
-      <div className={styles.intro}>
-        <div className={styles.introText}>
-          <h1>Hi, I'm Alexa. 💫</h1>
+    <div className="flex flex-col gap-16 mx-auto p-16 w-full max-w-[1000px]">
+      <div className="flex flex-row gap-8 w-full">
+        <div>
+          <h1 className="text-4xl font-bold mb-4">Hi, I'm Alexa. 💫</h1>
           <p>
             I'm a software engineer focused on building and increasing access to
             technology that amplifies human potential. I work to create
@@ -27,7 +24,11 @@ export const Home = (): JSX.Element => {
             , concentrating in Human-Centered Artificial Intelligence.
           </p>
         </div>
-        <img className={styles.profilePic} src={ProfilePicture} alt="Profile" />
+        <img
+          className="my-auto h-[300px] rounded-[25px]"
+          src={ProfilePicture}
+          alt="Profile"
+        />
       </div>
       <Experience />
       <Projects />
