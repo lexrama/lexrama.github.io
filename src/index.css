@@ -20,3 +20,20 @@
     @apply text-black dark:text-white hover:text-gray-500 dark:hover:text-gray-400;
   }
 }
+
+/* Lightbox captions positioning and styling */
+.yarl__captions_container,
+.yarl__slide_captions_container,
+[class*="captions_container"] {
+  top: auto !important;
+  bottom: 0 !important;
+  align-items: flex-end !important;
+}
+
+.yarl__captions_title,
+.yarl__captions_description,
+.yarl__slide_captions,
+[class*="captions_title"],
+[class*="captions_description"] {
+  text-transform: lowercase !important;
+}

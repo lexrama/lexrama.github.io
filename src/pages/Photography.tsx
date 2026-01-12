@@ -2,19 +2,25 @@ import { RowsPhotoAlbum } from "react-photo-album";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Lightbox from "yet-another-react-lightbox";
+import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/captions.css";
 import "react-photo-album/rows.css";
 
 interface Photo {
   src: string;
   width: number;
   height: number;
+  title?: string;
+  description?: string;
 }
 
 interface LightboxSlide {
   src: string;
   width: number;
   height: number;
+  title?: string;
+  description?: string;
 }
 
 type PhotoOrientation = "vertical" | "horizontal";
@@ -37,10 +43,14 @@ const IMAGE_PATHS = {
 const createPhoto = (
   filename: string,
   orientation: PhotoOrientation,
-  basePath: string
+  basePath: string,
+  title?: string,
+  description?: string
 ): Photo => ({
   src: `${basePath}/${filename}`,
   ...PHOTO_DIMENSIONS[orientation],
+  ...(title && { title }),
+  ...(description && { description }),
 });
 
 const convertToLightboxSlides = (photos: Photo[]): LightboxSlide[] =>
@@ -49,44 +59,48 @@ const convertToLightboxSlides = (photos: Photo[]): LightboxSlide[] =>
     ...(photo.width === 2
       ? LIGHTBOX_DIMENSIONS.vertical
       : LIGHTBOX_DIMENSIONS.horizontal),
+    ...(photo.title && { title: photo.title }),
+    ...(photo.description && { description: photo.description }),
   }));
 
-const digitalPhotoList: Array<[string, PhotoOrientation]> = [
-  ["portfolio_1.jpg", "vertical"],
-  ["portfolio_2.jpg", "vertical"],
-  ["portfolio_3.jpg", "horizontal"],
-  ["portfolio_14.jpg", "horizontal"],
-  ["portfolio_15.jpg", "vertical"],
-  ["portfolio_16.jpg", "horizontal"],
-  ["portfolio_4.jpg", "horizontal"],
-  ["portfolio_5.jpg", "vertical"],
-  ["portfolio_6.jpg", "horizontal"],
-  ["portfolio_7.jpg", "vertical"],
-  ["portfolio_8.jpg", "vertical"],
-  ["portfolio_9.jpg", "vertical"],
-  ["portfolio_10.jpg", "horizontal"],
-  ["portfolio_11.jpg", "horizontal"],
-  ["portfolio_12.jpg", "horizontal"],
+const digitalPhotoList: Array<[string, PhotoOrientation, string?, string?]> = [
+  ["portfolio_1.jpg", "vertical", "astoria, queens, nyc"],
+  ["portfolio_2.jpg", "vertical", "astoria, queens, nyc"],
+  ["portfolio_3.jpg", "horizontal", "metropolitan museum of art, nyc"],
+  ["portfolio_14.jpg", "horizontal", "greenwich, ct"],
+  ["portfolio_15.jpg", "vertical", "central park, nyc"],
+  ["portfolio_16.jpg", "horizontal", "central park, nyc"],
+  ["portfolio_4.jpg", "horizontal", "orlando, fl"],
+  ["portfolio_5.jpg", "vertical", "amherst, ma"],
+  ["portfolio_6.jpg", "horizontal", "amherst, ma"],
+  ["portfolio_7.jpg", "vertical", "stanford, ca"],
+  ["portfolio_8.jpg", "vertical", "stanford, ca"],
+  ["portfolio_9.jpg", "vertical", "stanford, ca"],
+  ["portfolio_10.jpg", "horizontal", "warwick, ny"],
+  ["portfolio_11.jpg", "horizontal", "stanford, ca"],
+  ["portfolio_12.jpg", "horizontal", "stanford, ca"],
 ];
 
-const filmPhotoList: Array<[string, PhotoOrientation]> = [
-  ["2.jpeg", "horizontal"],
-  ["3.jpeg", "horizontal"],
-  ["4.png", "horizontal"],
-  ["5.png", "horizontal"],
-  ["6.png", "horizontal"],
-  ["7.jpeg", "horizontal"],
-  ["8.png", "horizontal"],
-  ["9.jpeg", "horizontal"],
-  ["10.jpeg", "horizontal"],
+const filmPhotoList: Array<[string, PhotoOrientation, string?, string?]> = [
+  ["2.jpeg", "horizontal", "central park, nyc"],
+  ["3.jpeg", "horizontal", "williamsburg, nyc"],
+  ["4.png", "horizontal", "valletta, malta"],
+  ["5.png", "horizontal", "marsaxlokk, malta"],
+  ["6.png", "horizontal", "marsaxlokk, malta"],
+  ["7.jpeg", "horizontal", "williamsburg, nyc"],
+  ["8.png", "horizontal", "harrison, nj"],
+  ["9.jpeg", "horizontal", "manhattan, nyc"],
+  ["10.jpeg", "horizontal", "williamsburg, nyc"],
 ];
 
-const digitalPhotos: Photo[] = digitalPhotoList.map(([filename, orientation]) =>
-  createPhoto(filename, orientation, IMAGE_PATHS.digital)
+const digitalPhotos: Photo[] = digitalPhotoList.map(
+  ([filename, orientation, title, description]) =>
+    createPhoto(filename, orientation, IMAGE_PATHS.digital, title, description)
 );
 
-const filmPhotos: Photo[] = filmPhotoList.map(([filename, orientation]) =>
-  createPhoto(filename, orientation, IMAGE_PATHS.film)
+const filmPhotos: Photo[] = filmPhotoList.map(
+  ([filename, orientation, title, description]) =>
+    createPhoto(filename, orientation, IMAGE_PATHS.film, title, description)
 );
 
 const useImagePreloader = (photos: Photo[]) => {
@@ -163,7 +177,9 @@ const PhotoGalleryView = ({ photos }: PhotoGalleryViewProps) => {
       {!allLoaded && <Spinner />}
       <div
         className={`w-3/4 mx-auto pb-[2%] ${
-          allLoaded ? 'animate-fadeIn' : 'fixed left-[-9999px] top-0 opacity-0 pointer-events-none'
+          allLoaded
+            ? "animate-fadeIn"
+            : "fixed left-[-9999px] top-0 opacity-0 pointer-events-none"
         } [&_img]:cursor-pointer [&_img]:transition-all [&_img]:duration-300 [&_img]:rounded [&_img]:outline-none [&_img:hover]:scale-105 [&_img:hover]:opacity-90 [&_img:hover]:shadow-lg [&_img:focus]:outline-none [&_img:active]:outline-none`}
       >
         <RowsPhotoAlbum
@@ -179,6 +195,29 @@ const PhotoGalleryView = ({ photos }: PhotoGalleryViewProps) => {
         close={() => setLightboxIndex(-1)}
         carousel={{ finite: false }}
         controller={{ closeOnBackdropClick: true }}
+        plugins={[Captions]}
+        captions={{ descriptionTextAlign: "center" }}
+        styles={{
+          captionsTitleContainer: {
+            top: "auto",
+            bottom: 0,
+          },
+          captionsTitle: {
+            textTransform: "lowercase",
+            textAlign: "center",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+            justifyItems: "center",
+            fontSize: "1rem",
+            fontWeight: "normal",
+            fontFamily: "system-ui",
+          },
+          captionsDescription: {
+            textTransform: "lowercase",
+          },
+        }}
       />
     </>
   );
@@ -192,14 +231,14 @@ export const Photography = () => (
   <>
     <PhotoHeader />
     <div className="flex justify-center gap-10 mt-10 p-5">
-      <Link 
-        to="/photos/digital" 
+      <Link
+        to="/photos/digital"
         className="py-3 px-8 text-lg font-medium no-underline border-2 border-current rounded-lg transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
       >
         digital
       </Link>
-      <Link 
-        to="/photos/film" 
+      <Link
+        to="/photos/film"
         className="py-3 px-8 text-lg font-medium no-underline border-2 border-current rounded-lg transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
       >
         film
