@@ -6,6 +6,7 @@ import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "react-photo-album/rows.css";
+import { FadeIn } from "../Effects";
 
 interface Photo {
   src: string;
@@ -45,7 +46,7 @@ const createPhoto = (
   orientation: PhotoOrientation,
   basePath: string,
   title?: string,
-  description?: string
+  description?: string,
 ): Photo => ({
   src: `${basePath}/${filename}`,
   ...PHOTO_DIMENSIONS[orientation],
@@ -95,12 +96,12 @@ const filmPhotoList: Array<[string, PhotoOrientation, string?, string?]> = [
 
 const digitalPhotos: Photo[] = digitalPhotoList.map(
   ([filename, orientation, title, description]) =>
-    createPhoto(filename, orientation, IMAGE_PATHS.digital, title, description)
+    createPhoto(filename, orientation, IMAGE_PATHS.digital, title, description),
 );
 
 const filmPhotos: Photo[] = filmPhotoList.map(
   ([filename, orientation, title, description]) =>
-    createPhoto(filename, orientation, IMAGE_PATHS.film, title, description)
+    createPhoto(filename, orientation, IMAGE_PATHS.film, title, description),
 );
 
 const useImagePreloader = (photos: Photo[]) => {
@@ -138,27 +139,8 @@ const useImagePreloader = (photos: Photo[]) => {
 
 const Spinner = () => (
   <div className="flex flex-col items-center justify-center py-20 px-5 gap-4">
-    <div className="w-12 h-12 border-4 border-gray-300 border-t-current rounded-full animate-spin"></div>
-    <p className="text-sm opacity-70 m-0">Loading photos...</p>
-  </div>
-);
-
-const PhotoHeader = () => (
-  <div className="flex flex-col items-center justify-center p-5">
-    <h1>Photography 📸</h1>
-    <p>
-      <a href="https://www.flickr.com/gp/133825690@N04/o1V00164Tp">
-        click here
-      </a>{" "}
-      to see my full portfolio on Flickr
-    </p>
-    <p>
-      contact me at{" "}
-      <a href="mailto:alexaramachandran@gmail.com">
-        alexaramachandran@gmail.com
-      </a>{" "}
-      for any inquiries!
-    </p>
+    <div className="w-10 h-10 border-[3px] border-slate-200 dark:border-slate-700 border-t-violet-500 rounded-full animate-spin" />
+    <p className="text-sm text-slate-500 m-0">Loading photos...</p>
   </div>
 );
 
@@ -173,14 +155,22 @@ const PhotoGalleryView = ({ photos }: PhotoGalleryViewProps) => {
 
   return (
     <>
-      <PhotoHeader />
+      <div className="max-w-6xl mx-auto px-6 pt-8 pb-4">
+        <Link
+          to="/photos"
+          className="inline-flex items-center gap-1 text-sm text-violet-600 dark:text-violet-400 hover:underline no-underline"
+        >
+          ← Back to photography
+        </Link>
+      </div>
+
       {!allLoaded && <Spinner />}
       <div
-        className={`w-3/4 mx-auto pb-[2%] ${
+        className={`max-w-6xl mx-auto px-6 pb-12 ${
           allLoaded
             ? "animate-fadeIn"
             : "fixed left-[-9999px] top-0 opacity-0 pointer-events-none"
-        } [&_img]:cursor-pointer [&_img]:transition-all [&_img]:duration-300 [&_img]:rounded [&_img]:outline-none [&_img:hover]:scale-105 [&_img:hover]:opacity-90 [&_img:hover]:shadow-lg [&_img:focus]:outline-none [&_img:active]:outline-none`}
+        } [&_img]:cursor-pointer [&_img]:transition-all [&_img]:duration-300 [&_img]:rounded-lg [&_img]:outline-none [&_img:hover]:scale-[1.03] [&_img:hover]:opacity-90 [&_img:hover]:shadow-lg [&_img:focus]:outline-none [&_img:active]:outline-none`}
       >
         <RowsPhotoAlbum
           photos={photos}
@@ -212,7 +202,7 @@ const PhotoGalleryView = ({ photos }: PhotoGalleryViewProps) => {
             justifyItems: "center",
             fontSize: "1rem",
             fontWeight: "normal",
-            fontFamily: "system-ui",
+            fontFamily: "Inter, system-ui",
           },
           captionsDescription: {
             textTransform: "lowercase",
@@ -228,21 +218,78 @@ export const DigitalPage = () => <PhotoGalleryView photos={digitalPhotos} />;
 export const FilmPage = () => <PhotoGalleryView photos={filmPhotos} />;
 
 export const Photography = () => (
-  <>
-    <PhotoHeader />
-    <div className="flex justify-center gap-10 mt-10 p-5">
-      <Link
-        to="/photos/digital"
-        className="py-3 px-8 text-lg font-medium no-underline border-2 border-current rounded-lg transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
-      >
-        digital
-      </Link>
-      <Link
-        to="/photos/film"
-        className="py-3 px-8 text-lg font-medium no-underline border-2 border-current rounded-lg transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
-      >
-        film
-      </Link>
+  <div className="max-w-6xl mx-auto px-6 py-12">
+    <FadeIn>
+      <div className="mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight m-0">
+          Photography
+        </h1>
+        <p className="text-slate-500 dark:text-slate-400 text-lg mt-3 m-0">
+          <a
+            href="https://www.flickr.com/gp/133825690@N04/o1V00164Tp"
+            className="text-violet-600 dark:text-violet-400 hover:underline no-underline"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Full portfolio on Flickr →
+          </a>
+        </p>
+      </div>
+    </FadeIn>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <FadeIn delay={0.1}>
+        <Link
+          to="/photos/digital"
+          className="group relative overflow-hidden rounded-2xl aspect-[4/3] block no-underline"
+        >
+          <img
+            src="../images/photography/digital/portfolio_10.jpg"
+            alt="Digital photography"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          <div className="absolute bottom-0 left-0 p-8">
+            <h2 className="text-white text-3xl font-bold m-0">Digital</h2>
+            <p className="text-white/60 text-sm mt-1 m-0 group-hover:text-white/80 transition-colors">
+              Explore collection →
+            </p>
+          </div>
+        </Link>
+      </FadeIn>
+
+      <FadeIn delay={0.2}>
+        <Link
+          to="/photos/film"
+          className="group relative overflow-hidden rounded-2xl aspect-[4/3] block no-underline"
+        >
+          <img
+            src="../images/photography/film/2.jpeg"
+            alt="Film photography"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          <div className="absolute bottom-0 left-0 p-8">
+            <h2 className="text-white text-3xl font-bold m-0">Film</h2>
+            <p className="text-white/60 text-sm mt-1 m-0 group-hover:text-white/80 transition-colors">
+              Explore collection →
+            </p>
+          </div>
+        </Link>
+      </FadeIn>
     </div>
-  </>
+
+    <div className="mt-10 text-center">
+      <p className="text-sm text-slate-500 m-0">
+        Contact me at{" "}
+        <a
+          href="mailto:alexaramachandran@gmail.com"
+          className="text-violet-600 dark:text-violet-400 hover:underline no-underline"
+        >
+          alexaramachandran@gmail.com
+        </a>{" "}
+        for inquiries
+      </p>
+    </div>
+  </div>
 );

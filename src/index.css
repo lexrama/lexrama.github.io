@@ -3,25 +3,37 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply m-0 pt-20 font-sans antialiased bg-white text-black dark:bg-black dark:text-white;
-    font-family: "Open Sans", sans-serif;
+  html {
+    scroll-behavior: smooth;
   }
 
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  body {
+    @apply m-0 pt-16 antialiased bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  ::selection {
+    @apply bg-violet-200 dark:bg-violet-900/60 text-violet-900 dark:text-violet-100;
   }
 
   ::-webkit-scrollbar {
-    width: 0px;
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700 rounded-full;
   }
 
   a {
-    @apply text-black dark:text-white hover:text-gray-500 dark:hover:text-gray-400;
+    @apply text-slate-900 dark:text-slate-100 transition-colors duration-200;
   }
 }
 
-/* Lightbox captions positioning and styling */
+/* Lightbox captions */
 .yarl__captions_container,
 .yarl__slide_captions_container,
 [class*="captions_container"] {
@@ -36,4 +48,5 @@
 [class*="captions_title"],
 [class*="captions_description"] {
   text-transform: lowercase !important;
+  font-family: "Inter", system-ui, sans-serif !important;
 }
