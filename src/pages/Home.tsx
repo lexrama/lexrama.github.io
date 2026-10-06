@@ -1,7 +1,6 @@
 import ProfilePicture from "../assets/profile.jpg";
 import { Contact } from "./Contact";
 import { Experience } from "./Experience";
-import { Projects } from "./Projects";
 import { FadeIn } from "../Effects";
 import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
@@ -84,12 +83,6 @@ export const Home = (): JSX.Element => {
           <section id="experience">
             <FadeIn>
               <Experience />
-            </FadeIn>
-          </section>
-
-          <section id="projects">
-            <FadeIn>
-              <Projects />
             </FadeIn>
           </section>
 

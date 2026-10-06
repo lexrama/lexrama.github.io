@@ -5,7 +5,6 @@ import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
 
 const NAV_SECTIONS = [
   { id: "experience", label: "experience" },
-  { id: "projects", label: "projects" },
 ];
 
 const NAV_LINKS = [{ to: "/photos", label: "photos" }];
